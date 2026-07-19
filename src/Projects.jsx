@@ -18,9 +18,94 @@ export default function Projects() {
     serviceItems: [['Excavation', 'Hard rock, soft rock, soil, pipeline and electrical-trench excavation'], ['Road construction', 'Paved and unpaved road construction'], ['Equipment rental', 'Heavy equipment rental with skilled operators']]
   };
   const icons = [Pickaxe, Route, Tractor];
-  return <main className="bg-stone-100 pt-20"><section className="bg-slate-950 py-20 text-white sm:py-28"><div className="site-shell"><p className="eyebrow !text-amber-400">{content.eyebrow}</p><div className="grid gap-10 lg:grid-cols-[1.3fr_.7fr] lg:items-end"><div><h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-6xl">{content.title}</h1><p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">{content.intro}</p></div><a href="/ben-fadhl-company-profile.pdf" download className="button-primary w-full sm:w-fit"><Download size={18} />{content.download}</a></div></div></section>
-    <section className="py-20 sm:py-28"><div className="site-shell"><p className="eyebrow">{content.projects}</p><div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><h2 className="max-w-xl text-4xl font-extrabold tracking-tight text-slate-950">{content.projects}</h2><p className="max-w-md leading-relaxed text-slate-600">{content.projectsText}</p></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">{content.projectItems.map(([title, description], index) => <article key={title} className="group overflow-hidden bg-white shadow-sm"><div className="h-52 overflow-hidden"><img src={images[index]} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" /></div><div className="p-7"><span className="font-heading text-xs font-bold tracking-widest text-amber-600">0{index + 1}</span><h3 className="mt-3 text-xl font-extrabold text-slate-950">{title}</h3><p className="mt-3 leading-relaxed text-slate-600">{description}</p></div></article>)}</div></div></section>
-    <section className="bg-white py-20 sm:py-28"><div className="site-shell"><div className="grid gap-12 lg:grid-cols-2"><div><p className="eyebrow">{content.fleet}</p><h2 className="text-4xl font-extrabold tracking-tight text-slate-950">{content.fleet}</h2><p className="mt-5 max-w-lg leading-relaxed text-slate-600">{content.fleetText}</p><div className="mt-9 grid grid-cols-2 gap-px bg-slate-200 sm:grid-cols-3">{content.fleetItems.map(([number, label]) => <div key={label} className="bg-stone-100 p-5"><strong className="block font-heading text-3xl font-extrabold text-amber-600">{number}</strong><span className="mt-2 block text-sm font-semibold text-slate-700">{label}</span></div>)}</div></div><div className="overflow-hidden"><img src="/images/project-8.png" alt="Construction machinery" className="h-full min-h-80 w-full object-cover" /></div></div></div></section>
-    <section className="py-20 sm:py-28"><div className="site-shell"><p className="eyebrow">{content.services}</p><h2 className="max-w-xl text-4xl font-extrabold tracking-tight text-slate-950">{content.services}</h2><p className="mt-4 max-w-2xl leading-relaxed text-slate-600">{content.servicesText}</p><div className="mt-12 grid gap-px bg-slate-200 md:grid-cols-3">{content.serviceItems.map(([title, description], index) => { const Icon = icons[index]; return <div key={title} className="bg-stone-100 p-8 sm:p-10"><Icon size={34} className="text-amber-600" /><h3 className="mt-10 text-2xl font-extrabold text-slate-950">{title}</h3><p className="mt-4 leading-relaxed text-slate-600">{description}</p><span className="mt-7 inline-flex text-amber-600"><ArrowUpRight size={21} /></span></div>; })}</div></div></section>
-  </main>;
+  
+  return (
+    <main className="bg-stone-100 pt-20">
+      <section className="bg-slate-950 py-20 text-white sm:py-28">
+        <div className="site-shell">
+          <p className="eyebrow !text-amber-400">{content.eyebrow}</p>
+          <div className="grid gap-10 lg:grid-cols-[1.3fr_.7fr] lg:items-end">
+            <div>
+              <h1 className="max-w-3xl text-4xl font-extrabold leading-tight sm:text-6xl">{content.title}</h1>
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">{content.intro}</p>
+            </div>
+            <a href="/ben-fadel-company-profile.pdf" download className="button-primary w-full sm:w-fit">
+              <Download size={18} />
+              {content.download}
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-20 sm:py-28">
+        <div className="site-shell">
+          <p className="eyebrow">{content.projects}</p>
+          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <h2 className="max-w-xl text-4xl font-extrabold tracking-tight text-slate-950">{content.projects}</h2>
+            <p className="max-w-md leading-relaxed text-slate-600">{content.projectsText}</p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {content.projectItems.map(([title, description], index) => (
+              <article key={title} className="group overflow-hidden bg-white shadow-sm">
+                <div className="h-52 overflow-hidden">
+                  <img src={images[index]} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                </div>
+                <div className="p-7">
+                  <span className="font-heading text-xs font-bold tracking-widest text-amber-600">0{index + 1}</span>
+                  <h3 className="mt-3 text-xl font-extrabold text-slate-950">{title}</h3>
+                  <p className="mt-3 leading-relaxed text-slate-600">{description}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <section className="bg-white py-20 sm:py-28">
+        <div className="site-shell">
+          <div className="grid gap-12 lg:grid-cols-2">
+            <div>
+              <p className="eyebrow">{content.fleet}</p>
+              <h2 className="text-4xl font-extrabold tracking-tight text-slate-950">{content.fleet}</h2>
+              <p className="mt-5 max-w-lg leading-relaxed text-slate-600">{content.fleetText}</p>
+              <div className="mt-9 grid grid-cols-2 gap-px bg-slate-200 sm:grid-cols-3">
+                {content.fleetItems.map(([number, label]) => (
+                  <div key={label} className="bg-stone-100 p-5">
+                    <strong className="block font-heading text-3xl font-extrabold text-amber-600">{number}</strong>
+                    <span className="mt-2 block text-sm font-semibold text-slate-700">{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="overflow-hidden">
+              <img src="/images/project-8.png" alt="Construction machinery" className="h-full min-h-80 w-full object-cover" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section className="py-20 sm:py-28">
+        <div className="site-shell">
+          <p className="eyebrow">{content.services}</p>
+          <h2 className="max-w-xl text-4xl font-extrabold tracking-tight text-slate-950">{content.services}</h2>
+          <p className="mt-4 max-w-2xl leading-relaxed text-slate-600">{content.servicesText}</p>
+          <div className="mt-12 grid gap-px bg-slate-200 md:grid-cols-3">
+            {content.serviceItems.map(([title, description], index) => { 
+              const Icon = icons[index]; 
+              return (
+                <div key={title} className="bg-stone-100 p-8 sm:p-10">
+                  <Icon size={34} className="text-amber-600" />
+                  <h3 className="mt-10 text-2xl font-extrabold text-slate-950">{title}</h3>
+                  <p className="mt-4 leading-relaxed text-slate-600">{description}</p>
+                  <span className="mt-7 inline-flex text-amber-600">
+                    <ArrowUpRight size={21} />
+                  </span>
+                </div>
+              ); 
+            })}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
 }

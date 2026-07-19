@@ -4,10 +4,10 @@ import { useLanguage } from './LanguageContext';
 
 export default function Hero() {
   const { t } = useLanguage();
-  return <section className="relative isolate flex min-h-[700px] items-end overflow-hidden bg-slate-950 pb-16 pt-32 sm:pb-20 lg:min-h-[760px]">
-    <div className="absolute inset-0 -z-20 bg-cover bg-center" style={{ backgroundImage: "url('/images/project-1.png')" }} />
-    <div className="absolute inset-0 -z-10 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/25" />
-    <div className="site-shell"><div className="max-w-3xl text-white">
+  return <section className="relative isolate flex min-h-[700px] items-end overflow-hidden bg-white pb-16 pt-32 sm:pb-20 lg:min-h-[760px]">
+    <div className="absolute inset-0 -z-20 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/ben-fadel-logo-black.png')" }} />
+    <div className="absolute inset-0 -z-10 bg-slate-950/75" />
+    <div className="site-shell relative z-10"><div className="max-w-3xl text-white">
       <p className="eyebrow !text-amber-400">{t('heroEyebrow')}</p>
       <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.03] tracking-tight sm:text-6xl lg:text-7xl">{t('heroTitleA')}<br /><span className="text-amber-400">{t('heroTitleB')}</span></h1>
       <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-200 sm:text-xl">{t('heroText')}</p>

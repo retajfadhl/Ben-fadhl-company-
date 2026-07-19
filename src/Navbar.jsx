@@ -26,12 +26,9 @@ export default function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all ${isScrolled ? 'bg-slate-950/95 shadow-xl shadow-slate-950/20 backdrop-blur' : 'bg-gradient-to-b from-slate-950/80 to-transparent'}`}>
       <div className="site-shell flex h-20 items-center justify-between gap-2">
         {/* Logo Section */}
-        <NavLink to="/" className="flex items-center gap-2 text-white shrink-0">
-          <span className="grid h-9 w-9 place-items-center bg-amber-500 font-heading text-xs font-extrabold tracking-tight text-slate-950">BF</span>
-          <span className="leading-tight hidden sm:block">
-            <strong className="block font-heading text-sm tracking-wide">BEN FADHL</strong>
-            <small className="text-[10px] font-semibold tracking-[0.18em] text-white/55">CONSTRUCTION</small>
-          </span>
+        <NavLink to="/" className="shrink-0 leading-tight text-white">
+          <strong className="block font-heading text-sm tracking-wide">BEN FADEL</strong>
+          <small className="text-[10px] font-semibold tracking-[0.18em] text-white/55">CONSTRUCTION</small>
         </NavLink>
 
         {/* Links Navigation Menu (Visible on both Mobile and Desktop) */}

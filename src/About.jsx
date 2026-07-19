@@ -37,12 +37,13 @@ export default function About() {
       <section className="container mx-auto px-6 md:px-12 mb-20">
         <div className="max-w-3xl">
           <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
-          <p className="eyebrow">{t('aboutEyebrow')}</p><h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t('aboutTitle')}</h1>
+          <p className="eyebrow">{t('aboutEyebrow')}</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Who we are</h1>
           <p className="text-lg text-gray-600 leading-relaxed mb-4">
-            {t('aboutText1')}
+            Ben Fadel General Construction Company is a leading earthworks and construction firm with over 30 years of experience delivering complex infrastructure projects across Libya.[cite: 2]
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            {t('aboutText2')}
+            Our proactive management style, honesty and integrity allow us to deliver lasting value for customers, suppliers and employees.[cite: 2]
           </p>
         </div>
       </section>

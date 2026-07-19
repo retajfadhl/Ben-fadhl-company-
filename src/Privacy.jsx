@@ -12,7 +12,7 @@ export default function Privacy() {
     contact: 'تواصل معنا', contactText: 'لأي سؤال عن خصوصيتك أو لطلب تعديل أو حذف بياناتك، راسلنا على a.fadhl76@gmail.com.'
   } : {
     eyebrow: 'Privacy', title: 'Privacy policy', updated: 'Last updated: July 2026',
-    intro: 'Ben Fadhl General Construction Company respects your privacy. This policy explains what information we collect when you use our website and how we use it.',
+    intro: 'Ben Fadel General Construction Company respects your privacy. This policy explains what information we collect when you use our website and how we use it.',
     collect: 'Information we collect', collectText: 'When you submit a quote request, we may collect your name, email address, phone number, project details, location and estimated budget.',
     use: 'How we use your information', useText: 'We use this information to reply to your enquiry, prepare a quote and communicate with you about your project. We do not sell your personal information.',
     sharing: 'Data sharing', sharingText: 'Form requests are processed through FormSubmit and delivered to the company email inbox. The website may also use Google Maps to display our location.',

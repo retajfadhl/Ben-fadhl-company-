@@ -4,5 +4,60 @@ import { useLanguage } from './LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
-  return <footer className="bg-slate-950 text-slate-300"><div className="site-shell py-14 sm:py-16"><div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]"><div><div className="flex items-center gap-3 text-white"><span className="grid h-10 w-10 place-items-center bg-amber-500 font-heading text-sm font-extrabold text-slate-950">BF</span><strong className="font-heading tracking-wide">BEN FADHL</strong></div><p className="mt-6 max-w-sm leading-relaxed text-slate-400">{t('footerText')}</p><Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300">{t('talk')} <ArrowUpRight size={16} /></Link></div><div><h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">{t('findUs')}</h3><div className="mt-5 space-y-4 text-sm leading-relaxed text-slate-400"><p className="flex gap-3"><MapPin size={18} className="shrink-0 text-amber-500" />{t('address')}</p><p className="flex gap-3"><Phone size={18} className="shrink-0 text-amber-500" /><span>+218 92 376 4655<br />+218 94 269 7940</span></p></div></div><div><h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">{t('contact')}</h3><div className="mt-5 space-y-3 text-sm text-slate-400"><a className="flex items-center gap-3 hover:text-white" href="mailto:a.fadhl76@gmail.com"><Mail size={18} className="text-amber-500" />a.fadhl76@gmail.com</a><a className="flex items-center gap-3 hover:text-white" href="mailto:retajfadhl@gmail.com"><Mail size={18} className="text-amber-500" />retajfadhl@gmail.com</a><Link to="/privacy" className="block pt-2 font-semibold text-amber-400 hover:text-amber-300">{t('privacyLink')}</Link></div></div></div><div className="mt-14 border-t border-white/10 pt-6 text-xs text-slate-500">© {new Date().getFullYear()} Ben Fadhl General Construction Company. All rights reserved.</div></div></footer>;
+  return (
+    <footer className="bg-slate-950 text-slate-300">
+      <div className="site-shell py-14 sm:py-16">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+          <div>
+            <strong className="font-heading tracking-wide text-white">BEN FADEL CONSTRUCTION</strong>
+            <p className="mt-6 max-w-sm leading-relaxed text-slate-400">
+              Delivering complex infrastructure projects with practical management, honesty and integrity.
+            </p>
+            <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300">
+              {t('talk')} <ArrowUpRight size={16} />
+            </Link>
+          </div>
+          
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">
+              {t('findUs')}
+            </h3>
+            <div className="mt-5 space-y-4 text-sm leading-relaxed text-slate-400">
+              <p className="flex gap-3">
+                <MapPin size={18} className="shrink-0 text-amber-500" />
+                {t('address')}
+              </p>
+              <p className="flex gap-3">
+                <Phone size={18} className="shrink-0 text-amber-500" />
+                <span>+218 92 376 4655<br />+218 94 269 7940</span>
+              </p>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">
+              {t('contact')}
+            </h3>
+            <div className="mt-5 space-y-3 text-sm text-slate-400">
+              <a className="flex items-center gap-3 hover:text-white" href="mailto:a.fadhl76@gmail.com">
+                <Mail size={18} className="text-amber-500" />
+                a.fadhl76@gmail.com
+              </a>
+              <a className="flex items-center gap-3 hover:text-white" href="mailto:retajfadhl@gmail.com">
+                <Mail size={18} className="text-amber-500" />
+                retajfadhl@gmail.com
+              </a>
+              <Link to="/privacy" className="block pt-2 font-semibold text-amber-400 hover:text-amber-300">
+                {t('privacyLink')}
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        <div className="mt-14 border-t border-white/10 pt-6 text-xs text-slate-500">
+          © {new Date().getFullYear()} Ben Fadel General Construction Company. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  );
 }
