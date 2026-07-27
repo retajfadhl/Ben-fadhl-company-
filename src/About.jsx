@@ -38,12 +38,12 @@ export default function About() {
         <div className="max-w-3xl">
           <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
           <p className="eyebrow">{t('aboutEyebrow')}</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Who we are</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t('aboutTitle')}</h1>
           <p className="text-lg text-gray-600 leading-relaxed mb-4">
-            Ben Fadel General Construction Company is a leading earthworks and construction firm with over 30 years of experience delivering complex infrastructure projects across Libya.[cite: 2]
+            {t('aboutText1')}
           </p>
           <p className="text-lg text-gray-600 leading-relaxed">
-            Our proactive management style, honesty and integrity allow us to deliver lasting value for customers, suppliers and employees.[cite: 2]
+            {t('aboutText2')}
           </p>
         </div>
       </section>
@@ -65,7 +65,7 @@ export default function About() {
             <img src="/images/project-2.png" alt="Excavation site" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="rounded-xl overflow-hidden shadow-lg h-80">
-            <img src="/images/project-3.png" alt="Heavy machinery" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            <img src="/images/about-machinery-fleet.png" alt="Roadwork machinery" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function About() {
               {t('fleetText')}
             </p>
             <div className="rounded-xl overflow-hidden shadow-lg h-64">
-              <img src="/images/project-8.png" alt="Machinery Fleet" className="w-full h-full object-cover" />
+              <img src="/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.29%20PM.jpeg" alt="Ben Fadel bulldozer transport" className="w-full h-full object-cover object-[center_42%]" />
             </div>
           </div>
         </div>

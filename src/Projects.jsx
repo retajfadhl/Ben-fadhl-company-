@@ -1,7 +1,27 @@
 import { Download, Pickaxe, Route, Tractor, ArrowUpRight } from 'lucide-react';
 import { useLanguage } from './LanguageContext';
 
-const images = ['/images/project-2.png', '/images/project-3.png', '/images/project-4.png', '/images/project-5.png', '/images/project-6.png', '/images/project-7.png'];
+const images = [
+  '/images/project-2.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.31%20PM%20(1).jpeg',
+  '/images/project-4.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.31%20PM.jpeg',
+  '/images/project-6.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.32%20PM.jpeg',
+];
+
+const galleryImages = [
+  '/images/project-3.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.32%20PM%20(1).jpeg',
+  '/images/project-5.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.32%20PM%20(3).jpeg',
+  '/images/project-7.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.32%20PM%20(5).jpeg',
+  '/images/project-9.png',
+  '/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.32%20PM%20(6).jpeg',
+];
+
+const imageFocus = ['', '', '', 'object-[center_28%]', '', ''];
 
 export default function Projects() {
   const { language } = useLanguage();
@@ -18,6 +38,8 @@ export default function Projects() {
     serviceItems: [['Excavation', 'Hard rock, soft rock, soil, pipeline and electrical-trench excavation'], ['Road construction', 'Paved and unpaved road construction'], ['Equipment rental', 'Heavy equipment rental with skilled operators']]
   };
   const icons = [Pickaxe, Route, Tractor];
+  const galleryTitle = ar ? 'صور من مواقع العمل' : 'Worksite gallery';
+  const galleryText = ar ? 'معداتنا وفرقنا في مواقع العمل.' : 'Our equipment and teams at work on site.';
   
   return (
     <main className="bg-stone-100 pt-20">
@@ -48,7 +70,7 @@ export default function Projects() {
             {content.projectItems.map(([title, description], index) => (
               <article key={title} className="group overflow-hidden bg-white shadow-sm">
                 <div className="h-52 overflow-hidden">
-                  <img src={images[index]} alt="" className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                  <img src={images[index]} alt="" className={`h-full w-full object-cover transition duration-500 group-hover:scale-105 ${imageFocus[index]}`} />
                 </div>
                 <div className="p-7">
                   <span className="font-heading text-xs font-bold tracking-widest text-amber-600">0{index + 1}</span>
@@ -78,7 +100,7 @@ export default function Projects() {
               </div>
             </div>
             <div className="overflow-hidden">
-              <img src="/images/project-8.png" alt="Construction machinery" className="h-full min-h-80 w-full object-cover" />
+              <img src="/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.31%20PM%20(3).jpeg" alt="Ben Fadel construction machinery" className="h-full min-h-80 w-full object-cover" />
             </div>
           </div>
         </div>
@@ -103,6 +125,16 @@ export default function Projects() {
                 </div>
               ); 
             })}
+          </div>
+        </div>
+      </section>
+      <section className="bg-white py-20 sm:py-28">
+        <div className="site-shell">
+          <p className="eyebrow">{galleryTitle}</p>
+          <h2 className="text-4xl font-extrabold tracking-tight text-slate-950">{galleryTitle}</h2>
+          <p className="mt-4 max-w-xl leading-relaxed text-slate-600">{galleryText}</p>
+          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3">
+            {galleryImages.map((src, index) => <div key={src} className="aspect-[4/3] overflow-hidden bg-slate-100"><img src={src} alt={`Ben Fadel construction site ${index + 1}`} className="h-full w-full object-cover transition duration-500 hover:scale-105" /></div>)}
           </div>
         </div>
       </section>

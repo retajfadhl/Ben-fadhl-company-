@@ -4,8 +4,8 @@ import { useLanguage } from './LanguageContext';
 
 export default function Hero() {
   const { t } = useLanguage();
-  return <section className="relative isolate flex min-h-[700px] items-end overflow-hidden bg-white pb-16 pt-32 sm:pb-20 lg:min-h-[760px]">
-    <div className="absolute inset-0 -z-20 bg-contain bg-center bg-no-repeat" style={{ backgroundImage: "url('/images/ben-fadel-logo-black.png')" }} />
+  return <section className="relative isolate flex min-h-[700px] items-end overflow-hidden bg-slate-950 pb-16 pt-36 sm:pb-20 lg:min-h-[760px]">
+    <div className="absolute inset-0 -z-20 bg-cover bg-[center_58%]" style={{ backgroundImage: "url('/images/site-gallery/WhatsApp%20Image%202026-07-24%20at%201.42.31%20PM%20(3).jpeg')" }} />
     <div className="absolute inset-0 -z-10 bg-slate-950/75" />
     <div className="site-shell relative z-10"><div className="max-w-3xl text-white">
       <p className="eyebrow !text-amber-400">{t('heroEyebrow')}</p>

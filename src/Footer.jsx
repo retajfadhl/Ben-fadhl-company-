@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <strong className="font-heading tracking-wide text-white">BEN FADEL CONSTRUCTION</strong>
             <p className="mt-6 max-w-sm leading-relaxed text-slate-400">
-              Delivering complex infrastructure projects with practical management, honesty and integrity.
+              {t('footerText')}
             </p>
             <Link to="/contact" className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300">
               {t('talk')} <ArrowUpRight size={16} />
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
         
         <div className="mt-14 border-t border-white/10 pt-6 text-xs text-slate-500">
-          © {new Date().getFullYear()} Ben Fadel General Construction Company. All rights reserved.
+          © {new Date().getFullYear()} Ben Fadel General Construction Company. {t('footerLegal')}
         </div>
       </div>
     </footer>

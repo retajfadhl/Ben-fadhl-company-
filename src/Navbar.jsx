@@ -1,18 +1,8 @@
-import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useLanguage } from './LanguageContext';
 
 export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 24);
-    onScroll(); 
-    window.addEventListener('scroll', onScroll); 
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   const navItems = [
     { to: '/', label: t('navHome') }, 
     { to: '/about', label: t('navAbout') }, 
@@ -20,15 +10,13 @@ export default function Navbar() {
     { to: '/contact', label: t('navContact') }
   ];
 
-  const linkClass = ({ isActive }) => `text-xs xs:text-sm font-semibold transition ${isActive ? 'text-amber-400' : 'text-white/80 hover:text-white'}`;
+  const linkClass = ({ isActive }) => `text-xs xs:text-sm font-semibold transition ${isActive ? 'text-amber-600' : 'text-slate-700 hover:text-slate-950'}`;
 
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-all ${isScrolled ? 'bg-slate-950/95 shadow-xl shadow-slate-950/20 backdrop-blur' : 'bg-gradient-to-b from-slate-950/80 to-transparent'}`}>
-      <div className="site-shell flex h-20 items-center justify-between gap-2">
-        {/* Logo Section */}
-        <NavLink to="/" className="shrink-0 leading-tight text-white">
-          <strong className="block font-heading text-sm tracking-wide">BEN FADEL</strong>
-          <small className="text-[10px] font-semibold tracking-[0.18em] text-white/55">CONSTRUCTION</small>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white shadow-sm">
+      <div className="site-shell flex h-28 items-center justify-between gap-3">
+        <NavLink to="/" className="flex h-20 w-64 shrink-0 items-center overflow-hidden sm:h-24 sm:w-80">
+          <img src="/images/ben-fadel-wide-logo.png" alt="Ben Fadel Company" className="h-full w-full object-cover object-center" />
         </NavLink>
 
         {/* Links Navigation Menu (Visible on both Mobile and Desktop) */}
@@ -42,15 +30,11 @@ export default function Navbar() {
           {/* Language Toggle */}
           <button 
             onClick={() => setLanguage(language === 'en' ? 'ar' : 'en')} 
-            className="text-xs xs:text-sm font-bold text-white/70 hover:text-amber-400 shrink-0"
+            className="text-xs xs:text-sm font-bold text-slate-600 hover:text-amber-600 shrink-0"
           >
             {t('language')}
           </button>
 
-          {/* Action Button - Only on Desktop to save mobile space */}
-          <NavLink to="/contact" className="button-primary !px-4 !py-2 text-xs md:text-sm !px-5 !py-2.5 hidden md:inline-block shrink-0">
-            {t('quote')}
-          </NavLink>
         </nav>
       </div>
     </header>

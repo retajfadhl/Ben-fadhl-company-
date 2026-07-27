@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -18,10 +19,17 @@ const Home = () => (
   </>
 );
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); }, [pathname]);
+  return null;
+}
+
 export default function App() {
   const { t } = useLanguage();
   return (
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <Navbar />
       
       <main className="flex-grow">
@@ -35,7 +43,7 @@ export default function App() {
       </main>
 
       <Footer />
-      <a href="https://wa.me/218923764655?text=Hello%20Ben%20Fadhl%20Construction%2C%20I%20would%20like%20to%20ask%20about%20a%20project." target="_blank" rel="noreferrer" aria-label={t('whatsapp')} className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-bold text-white shadow-lg transition hover:scale-105 hover:bg-[#20bd5a]"><MessageCircle size={21} fill="currentColor" /> <span className="hidden sm:inline">{t('whatsapp')}</span></a>
+      <a href="https://wa.me/218923764655?text=Hello%20Ben%20Fadel%20Construction%2C%20I%20would%20like%20to%20ask%20about%20a%20project." target="_blank" rel="noreferrer" aria-label={t('whatsapp')} className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-bold text-white shadow-lg transition hover:scale-105 hover:bg-[#20bd5a]"><MessageCircle size={21} fill="currentColor" /> <span className="hidden sm:inline">{t('whatsapp')}</span></a>
     </div>
   );
 }
