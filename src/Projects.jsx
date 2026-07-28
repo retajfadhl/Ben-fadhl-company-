@@ -42,7 +42,7 @@ export default function Projects() {
   const galleryText = ar ? 'معداتنا وفرقنا في مواقع العمل.' : 'Our equipment and teams at work on site.';
   
   return (
-    <main className="bg-stone-100 pt-20">
+    <main className="bg-stone-100 pt-24 md:pt-20">
       <section className="bg-slate-950 py-20 text-white sm:py-28">
         <div className="site-shell">
           <p className="eyebrow !text-amber-400">{content.eyebrow}</p>
