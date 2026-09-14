@@ -1,23 +1,15 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import Navbar from './Navbar';
-import Footer from './Footer';
-import Hero from './Hero';
-import Services from './Services';
-import About from './About';
-import Contact from './Contact'; 
-import Privacy from './Privacy';
-import Projects from './Projects';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Projects from './pages/Projects';
 import { MessageCircle } from 'lucide-react';
-import { useLanguage } from './LanguageContext';
-
-const Home = () => (
-  <>
-    <Hero />
-    <Services />
-  </>
-);
+import { useLanguage } from './context/LanguageContext';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,7 +23,7 @@ export default function App() {
     <div className="flex flex-col min-h-screen">
       <ScrollToTop />
       <Navbar />
-      
+
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />

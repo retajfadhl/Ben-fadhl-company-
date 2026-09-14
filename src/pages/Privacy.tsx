@@ -1,4 +1,4 @@
-import { useLanguage } from './LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Privacy() {
   const { language } = useLanguage();
@@ -18,5 +18,6 @@ export default function Privacy() {
     sharing: 'Data sharing', sharingText: 'Form requests are processed through FormSubmit and delivered to the company email inbox. The website may also use Google Maps to display our location.',
     contact: 'Contact us', contactText: 'For privacy questions, or to request a correction or deletion of your details, email a.fadhl76@gmail.com.'
   };
-  return <main className="min-h-screen bg-stone-100 pb-20 pt-32"><article className="site-shell max-w-3xl"><p className="eyebrow">{content.eyebrow}</p><h1 className="text-4xl font-extrabold text-slate-950 sm:text-5xl">{content.title}</h1><p className="mt-4 text-sm text-slate-500">{content.updated}</p><p className="mt-10 text-lg leading-relaxed text-slate-700">{content.intro}</p><div className="mt-10 space-y-9">{[['collect', 'collectText'], ['use', 'useText'], ['sharing', 'sharingText'], ['contact', 'contactText']].map(([heading, text]) => <section key={heading}><h2 className="text-xl font-extrabold text-slate-950">{content[heading]}</h2><p className="mt-3 leading-relaxed text-slate-600">{content[text]}</p></section>)}</div></article></main>;
+  const sections: Array<[keyof typeof content, keyof typeof content]> = [['collect', 'collectText'], ['use', 'useText'], ['sharing', 'sharingText'], ['contact', 'contactText']];
+  return <main className="min-h-screen bg-stone-100 pb-20 pt-32"><article className="site-shell max-w-3xl"><p className="eyebrow">{content.eyebrow}</p><h1 className="text-4xl font-extrabold text-slate-950 sm:text-5xl">{content.title}</h1><p className="mt-4 text-sm text-slate-500">{content.updated}</p><p className="mt-10 text-lg leading-relaxed text-slate-700">{content.intro}</p><div className="mt-10 space-y-9">{sections.map(([heading, text]) => <section key={heading}><h2 className="text-xl font-extrabold text-slate-950">{content[heading]}</h2><p className="mt-3 leading-relaxed text-slate-600">{content[text]}</p></section>)}</div></article></main>;
 }

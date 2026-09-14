@@ -1,16 +1,27 @@
-# React + Vite
+# Ben Fadel Construction — website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Marketing site for Ben Fadel General Construction Company (Benghazi, Libya). React + TypeScript, Vite, Tailwind CSS. English/Arabic (RTL) via a single in-app language switcher — all copy lives in [src/context/LanguageContext.tsx](src/context/LanguageContext.tsx).
 
-Currently, two official plugins are available:
+## Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+src/
+  pages/        route-level views (Home, About, Projects, Contact, Privacy)
+  components/   shared UI (Navbar, Footer, Hero, Services, StatCounter, ProjectCard, CtaBanner)
+  context/      language/translation provider
+  data/         static content not tied to a language (image lists)
+```
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev        # local dev server
+npm run typecheck  # tsc --noEmit
+npm run lint        # eslint
+npm run build       # typecheck + production build to dist/
+```
 
-## Expanding the ESLint configuration
+## Deployment
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Hosted on Netlify, auto-deployed from `main` (see [public/_redirects](public/_redirects) for the SPA rewrite). [.github/workflows/ci.yml](.github/workflows/ci.yml) runs lint/typecheck/build on every push and PR so broken code never reaches `main`.

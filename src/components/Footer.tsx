@@ -1,6 +1,6 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useLanguage } from './LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -17,7 +17,7 @@ export default function Footer() {
               {t('talk')} <ArrowUpRight size={16} />
             </Link>
           </div>
-          
+
           <div>
             <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">
               {t('findUs')}
@@ -33,7 +33,7 @@ export default function Footer() {
               </p>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-white">
               {t('contact')}
@@ -53,7 +53,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-14 border-t border-white/10 pt-6 text-xs text-slate-500">
           © {new Date().getFullYear()} Ben Fadel General Construction Company. {t('footerLegal')}
         </div>
